@@ -165,4 +165,64 @@ body
     opacity: 0.2;
 }
 
+/*Process Order Page*/
+
+#content3 
+{
+    display: block;
+    margin: auto;
+    padding-top: 10px;
+    max-width: 442px;
+}
+
+#table
+{
+    width: 100%;
+    border-style: solid;
+    border-color: white;
+    box-shadow: 0 0 10px lightgray;
+    border-radius: 12px;
+}
+
+#table-header-magazine
+{
+    width: 40%;
+}
+
+#table-header-qty
+{
+    width: 20%;
+}
+
+.magazine-item-big 
+{
+    display: block;
+    margin-top: 24px;
+}
+   
+.magazine-item-big img 
+{
+    border-style: solid;
+    border-color: white;
+    box-shadow: 0 0 10px lightgray;
+    border-radius: 12px;
+    width: 55%;
+}
+
+.magazine-item-big img:hover
+{
+    border-color:red;
+    box-shadow: 0 0 12px gray;
+}
+
+.magazine-item-big-title
+{
+    font-weight: bold;
+}
+
+.magazine-item-big img:active
+{
+    border-color:black;
+}
+
 /*Created by Shaun Graham for ICS 325-01*/
