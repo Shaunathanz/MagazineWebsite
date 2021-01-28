@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div id="logo" onclick="window.close();">
+    <div id="logo">
         <h1 id="text">Manga / Place Order</h1>
     </div>
 
@@ -22,7 +22,7 @@
     </div>
 
     <div id="content2">
-        <form action="processorder.php">
+        <form action="processorder.php" method="post">
             <div class="row">
                 <div class="col-25">
                     <label for="manga-title">Manga: </label>
@@ -59,70 +59,5 @@
             <input id="btn_place-order" type="submit" value="Place Order">
         </form>
     </div>
-    <script>
-        var selected;
-        function updatePrevImg()
-        {
-            var pic = document.getElementById('manga-img');
-            selected = document.getElementById('selected').value;
-            console.log("selected: " + selected);
-            var fileName = "";
-            switch(selected)
-            {
-                case "My Hero Academia # 9":
-                    fileName = "bokuNoHero.jpg";
-                    break;
-                case "Death Note # 1":
-                    fileName = "deathnote.jpg";                    
-                    break;
-                case "Fullmetal Alchemist # 1":
-                    fileName = "fullmetalalchemist.jpg";
-                    break;
-                case "Hellsing # 1":
-                    fileName = "hellsing.jpg";
-                    break;
-                case "Sgt. Frog # 6":
-                    fileName = "kerorogunsou.jpg";
-                    break;
-                case "Attack on Titan # 12":
-                    fileName = "shingekinokyojin.jpg";
-                    break;
-                case "Space Dandy # 1":
-                    fileName = "spacedandy.jpg";
-                    break;
-                case "Uzumaki # 1":
-                    fileName = "uzumaki.jpg";
-                    break;
-                case "One Punch-Man # 1":
-                    fileName = "wanpanman.jpg";
-                    break;
-                case "Yotsuba&! # 1":
-                    fileName = "yotsuba.jpg";
-                    break;
-                default:
-                    break;
-            }
-            if(fileName != "")
-            {
-                pic.src = '../images/' + fileName;
-                pic.title = selected;
-                document.getElementsByClassName('magazine-item')[0].style.display = "block";
-            } else {
-                document.getElementsByClassName('magazine-item')[0].style.display = "none";
-            }
-        }
-
-        function btnEnable()
-        {
-            console.log("Selected = " + selected);
-            var quantity = document.getElementById('quantity').value;
-            if(quantity >= 1 && Number.isInteger(Number(quantity)) && selected != undefined)
-            {
-                btn.disabled = false;
-            } else {
-                btn.disabled = true;
-            }
-        }
-    </script>
 </body>
 </html>
