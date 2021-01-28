@@ -3,6 +3,10 @@
     $qty = $_POST['quantity'];
     $price;
     $total;
+    $tax = 0.1;
+    $totalTax;
+    $date = date("m/d/y h:m:s A");
+    $add_days = strtotime(date("m/d/y", strtotime($date)) . "+2 day");
 
     //just in case the prices weren't all the same this is where you'd change them
     switch($magazine)
@@ -40,7 +44,8 @@
         default:
             break;
     }
-    $total = number_format((float) ($price * $qty), 2, '.', '');
+    $total = number_format((float) ($price * $qty) * (1 + $tax), 2, '.', '');
+    $totalTax = number_format((float) ($price * $qty) * $tax, 2, '.', '');
 
     echo 
         "<!DOCTYPE html>
@@ -62,14 +67,20 @@
                             <tr id='table-headers'>
                                 <th id='table-header-magazine':>Manga</th>
                                 <th id='table-header-qty'>Qty</th>
+                                <th id='table-header-tax'>Tax</th>
                                 <th>Total</th>
                             </tr>
                             <tr>
                                 <td>$magazine</td>
                                 <td>$qty</td>
+                                <td>$$totalTax</td>
                                 <td>$$total</td>
                             </tr>
                         </table>
+                    </div>
+                    <div id='times'>
+                        <p><i>Purchased: " . $date . "</i>
+                        <br><i>Last Day to Return: " . date("m/d/y", $add_days) . " " . date("h:m:s A") . "</i></p>
                     </div>
                     <div class='magazine-item-big'>
                         <img id='manga-img-big' src='../images/bokuNoHero.jpg'>

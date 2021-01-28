@@ -193,24 +193,12 @@ body
 {
     width: 20%;
 }
-
-.magazine-item-big 
-{
-    display: block;
-    margin-top: 24px;
-}
    
 .magazine-item-big img 
 {
     border-style: solid;
-    border-color: white;
-    box-shadow: 0 0 10px lightgray;
     border-radius: 12px;
-    width: 55%;
-}
-
-.magazine-item-big img:hover
-{
+    height: 700px;
     border-color:red;
     box-shadow: 0 0 12px gray;
 }
@@ -224,5 +212,10 @@ body
 {
     border-color:black;
 }
+
+#times 
+{
+    color: grey;
+} 
 
 /*Created by Shaun Graham for ICS 325-01*/
