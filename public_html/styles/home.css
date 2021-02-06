@@ -1,0 +1,221 @@
+/*Base Design*/
+
+body
+{
+    text-align: center;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#logo
+{
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#logo:active
+{
+    background-color: black;
+    cursor: pointer;
+}
+
+/*delete if not needed*/
+#nav
+{
+    display: none;
+}
+/*delete if not needed*/
+#nav ul
+{
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+    justify-content: space-around;
+}
+/*delete if not needed*/
+#nav ul li:hover
+{
+    scale: 1.5;
+    background-color: red;
+    font-weight: bold;
+    color: white;
+}
+/*delete if not needed*/
+#nav ul li:active
+{
+    background-color: black;
+}
+
+#content
+{
+    display: block;
+    margin: auto;
+    padding-top: 10px;
+}
+
+#magazine-grid
+{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 15px;
+    margin: inherit;
+}
+
+.magazine-item img
+{
+    max-width: 204px;
+    max-height: 291px;
+    border-style: solid;
+    border-color: white;
+    box-shadow: 0 0 10px lightgray;
+    border-radius: 12px;
+}
+
+.magazine-item img:hover
+{
+    border-color:red;
+    box-shadow: 0 0 12px gray;
+}
+
+.magazine-item-title
+{
+    font-weight: bold;
+}
+
+.magazine-item img:active
+{
+    border-color:black;
+}
+
+/*Place Order Page*/
+
+#content2 
+{
+    display: block;
+    margin: auto;
+    padding-top: 10px;
+    max-width: 284px;
+}
+
+.col-25 
+{
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+  
+.col-75 
+{
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+#selected
+{
+    text-align: center;
+}
+
+#quantity
+{
+    text-align: center;
+}   
+
+.row:after 
+{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#btn_place-order
+{
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-style: solid;
+    border-color: white;
+    box-shadow: 0 0 10px lightgray;
+    border-radius: 12px;
+}
+
+#btn_place-order:hover
+{
+    border-color:red;
+    box-shadow: 0 0 12px gray;
+    cursor: pointer;
+}
+
+#btn_place-order:active
+{
+    border-color:black;
+}
+
+#btn_place-order:disabled
+{
+    opacity: 0.2;
+}
+
+/*Process Order Page*/
+
+#content3 
+{
+    display: block;
+    margin: auto;
+    padding-top: 10px;
+    max-width: 442px;
+}
+
+#table
+{
+    width: 100%;
+    border-style: solid;
+    border-color: white;
+    box-shadow: 0 0 10px lightgray;
+    border-radius: 12px;
+}
+
+#table-header-magazine
+{
+    width: 40%;
+}
+
+#table-header-qty
+{
+    width: 20%;
+}
+   
+.magazine-item-big img 
+{
+    border-style: solid;
+    border-radius: 12px;
+    height: 700px;
+    border-color:red;
+    box-shadow: 0 0 12px gray;
+}
+
+.magazine-item-big-title
+{
+    font-weight: bold;
+}
+
+.magazine-item-big img:active
+{
+    border-color:black;
+}
+
+#times 
+{
+    color: grey;
+} 
+
+/*Created by Shaun Graham for ICS 325-01*/

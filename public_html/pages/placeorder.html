@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../styles/home.css" media="screen" />
+    <script src="../script/script.js"></script>
+    <meta charset="utf-8"/>
+    <title id="tab_name">Place Order</title>
+</head>
+
+<body>
+    <div id="logo">
+        <h1 id="text">Manga / Place Order</h1>
+    </div>
+
+    <!--Delete this and the #nav CSS if not needed-->
+    <div id="nav">
+        <ul>
+            <li>Page 1</li>
+            <li>Page 2</li>
+            <li>Page 3</li>
+        </ul>
+    </div>
+
+    <div id="content2">
+        <form action="processorder.php" method="post">
+            <div class="row">
+                <div class="col-25">
+                    <label for="manga-title">Manga: </label>
+                </div>
+                <div class="col-75">
+                    <select id="selected" name="manga" autocomplete="off" oninput = "updatePrevImg();btnEnable();">
+                        <option value="undefined"></option>
+                        <option value="My Hero Academia # 9">My Hero Academia # 9</option>
+                        <option value="Death Note # 1">Death Note # 1</option>
+                        <option value="Fullmetal Alchemist # 1">Fullmetal Alchemist # 1</option>
+                        <option value="Hellsing # 1">Hellsing # 1</option>
+                        <option value="Sgt. Frog # 6">Sgt. Frog # 6</option>
+                        <option value="Attack on Titan # 12">Attack on Titan # 12</option>
+                        <option value="Space Dandy # 1">Space Dandy # 1</option>
+                        <option value="Uzumaki # 1">Uzumaki # 1</option>
+                        <option value="One Punch-Man # 1">One Punch-Man # 1</option>
+                        <option value="Yotsuba&! # 1">Yotsuba&! # 1</option>
+                    </select>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-25">
+                    <label for="quantity">Qty: </label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="quantity" name="quantity" maxlength="6" autocomplete="off" oninput = "btnEnable();">
+                </div>
+            </div>
+            <br><br>
+            <div class="magazine-item">
+                <img id="manga-img" style="max-width:236px;max-height:400px;">
+            </div><br>
+            <input id="btn_place-order" type="submit" value="Place Order">
+        </form>
+    </div>
+</body>
+</html>
