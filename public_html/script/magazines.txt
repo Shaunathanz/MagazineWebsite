@@ -1,0 +1,10 @@
+bokuNoHero.jpg,My Hero Academia # 9,06/03/2016,1.99
+deathnote.jpg,Death Note # 1,04/02/2004,1.99
+fullmetalalchemist.jpg,Fullmetal Alchemist # 1,01/22/2002,1.99
+hellsing.jpg,Hellsing # 1,09/01/1998,1.99
+kerorogunsou.jpg,Sgt. Frog # 6,02/01/2003,1.99
+shingekinokyojin.jpg,Attack on Titan # 12,09/01/2009,1.99
+spacedandy.jpg,Space Dandy # 1,06/28/2016,1.99
+uzumaki.jpg,Uzumaki # 1,08/01/1998,1.99
+wanpanman.jpg,One Punch-Man # 1,12/12/2012,1.99
+yotsuba.jpg,Yotsuba&! # 1,09/15/2009,1.99
