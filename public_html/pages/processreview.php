@@ -21,7 +21,7 @@
         
             <div id='content3'>
                 <div id = 'orderTotal'>
-                    <h2>$title</h2>
+                    <h2><?php echo $title;?></h2>
                     <p id='total'><?php echo $rating;?> / 5</p>
                     <h3 id="reviewText">"<?php echo $review?>"</h3>
                 </div>
