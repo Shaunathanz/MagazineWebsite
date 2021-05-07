@@ -39,7 +39,7 @@
 <!DOCTYPE html>
     <html>
         <head>
-            <link rel='stylesheet' type='text/css' href='../styles/home.css' media='screen' />
+            <link rel='stylesheet' type='text/css' href='../styles/home.css?<?php echo time();?>' media='screen' />
             <script src='../script/script.js'></script>
             <meta charset='utf-8'/>
             <title id='tab_name'>Process Order</title>
