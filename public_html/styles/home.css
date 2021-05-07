@@ -17,6 +17,7 @@ body
     max-width: 1140px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: -10px;
 }
 
 #logo:active
@@ -25,32 +26,46 @@ body
     cursor: pointer;
 }
 
-/*delete if not needed*/
-#nav
+#nav 
 {
-    display: none;
+    display: block;
+    margin-bottom: 5px;
 }
-/*delete if not needed*/
+
 #nav ul
 {
     display: flex;
     list-style-type: none;
     margin: 0;
-    padding-left: 0;
     justify-content: space-around;
-}
-/*delete if not needed*/
-#nav ul li:hover
-{
-    scale: 1.5;
-    background-color: red;
-    font-weight: bold;
+    border-bottom-left-radius: 10px;
+    user-select: none;
+    padding: 3px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 10px;
     color: white;
 }
-/*delete if not needed*/
+
+#nav ul li:hover
+{
+    cursor: pointer;
+    opacity: 1;
+}
+
 #nav ul li:active
 {
     background-color: black;
+}
+
+#nav > ul > li
+{
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-radius: 3px;
+    background-color: red;
+    opacity: 0.5;
 }
 
 #content
@@ -102,7 +117,7 @@ body
     display: block;
     margin: auto;
     padding-top: 10px;
-    max-width: 284px;
+    max-width: 415px;
 }
 
 .col-25 
@@ -115,7 +130,14 @@ body
 .col-75 
 {
     float: left;
-    width: 75%;
+    width: 50%;
+    margin-top: 6px;
+}
+
+.col-100 
+{
+    float: center;
+    width: 100%;
     margin-top: 6px;
 }
 
@@ -176,50 +198,75 @@ body
     display: block;
     margin: auto;
     padding-top: 10px;
+    max-width: 900px;
+}
+
+#discounts 
+{
+    display: block;
+    margin: auto;
+    padding-top: 10px;
+    max-width: 900px;
+}
+
+#ordertotal
+{
+    display: block;
+    margin: auto;
+    padding-top: 10px;
     max-width: 442px;
 }
 
 #table
 {
-    width: 100%;
+    width: 54%;
     border-style: solid;
     border-color: white;
     box-shadow: 0 0 10px lightgray;
     border-radius: 12px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#table-header-magazine
+#table-header-item
 {
-    width: 40%;
+    width: 50%;
 }
 
 #table-header-qty
 {
-    width: 20%;
-}
-   
-.magazine-item-big img 
-{
-    border-style: solid;
-    border-radius: 12px;
-    height: 675px;
-    border-color:red;
-    box-shadow: 0 0 12px gray;
-}
-
-.magazine-item-big-title
-{
-    font-weight: bold;
-}
-
-.magazine-item-big img:active
-{
-    border-color:black;
+    width: 50%;
 }
 
 #times 
 {
     color: grey;
 } 
+
+#orderTotal
+{
+    width: 54%;
+    box-shadow: 0 0 10px lightgray;
+    border-radius: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+#total 
+{
+    font-size: xx-large;
+    font-size: xxx-large;
+    font-style: italic;
+}
+
+/*Process Review Page*/
+
+#reviewText
+{
+    font-style: italic;
+    color: gray;
+}
 
 /*Created by Shaun Graham for ICS 325-01*/

@@ -1,30 +1,39 @@
 var page; //current page title
 var selected; //magazine selected by user
+var qty_magazines;
+var qty_subscriptions;
+var magazineSelection; //store magazine info here
 
 window.onload = function()
 {
     page = document.getElementById('tab_name').innerText;
+    document.getElementById('logo').addEventListener("click", function(){goToPage("home");});
     console.log('Current Page: ' + page);
     switch(page)
     {
         case 'Manga':
-            //
+            document.getElementById('li_review').addEventListener("click", function(){goToPage("review");});
             break;
         case 'Place Order':
-            document.getElementById('logo').addEventListener("click", goHome);
             btn = document.getElementById('btn_place-order');
             btn.disabled = true;
             break;
         case 'Process Order':
-            updatePrevImg();
-            document.getElementById('logo').addEventListener("click", goHome);
+            break;
+        case 'Review':
+            btn = document.getElementById('btn_place-order');
+            btn.disabled = true;
             break;
         default:
-            //
             break;
     }
 
     console.log("Created by Shaun Graham for ICS 325-01");
+}
+
+function updateSubscriptionCount()
+{
+    qty_subscriptions = document.getElementById('qty_subscriptions').value;
 }
 
 /**
@@ -100,19 +109,69 @@ function updatePrevImg()
  */
 function btnEnable()
 {
-    var quantity = document.getElementById('quantity').value;
-    if(quantity >= 1 && Number.isInteger(Number(quantity)) && selected != undefined)
+    if(page == "Place Order")
     {
-        btn.disabled = false;
-    } else {
-        btn.disabled = true;
+        qty_magazine = document.getElementById('qty_magazines').value;
+        qty_subscriptions = document.getElementById('qty_subscriptions').value;
+        var total = qty_magazine + qty_subscriptions;    
+        if(total > 0)
+        {
+            btn.disabled = false;
+        } else {
+            btn.disabled = true;
+        }
     }
+    else if (page == "Review")
+    {
+        var textarea = document.getElementById('review');
+        var content = textarea.value;
+        if(content.length >= 500)
+        {
+            btn.disabled = true;
+        }
+        else if(content.length >= 3)
+        {
+            btn.disabled = false;
+            //console.log(content.l)
+        }
+        else
+        {
+            btn.disabled = true;
+        }
+    }
+}
+
+/**
+ * Get rid of nono words for user reviews
+ */
+function sanitizeInput()
+{
+    var textarea = document.getElementById("review");
+    var value = textarea.value;
+    value = value.replace("disgusting", "!@#$%");
+    value = value.replace("ghastly", "!@#$%");
+    value = value.replace("vile", "!@#$%");
+    value = value.replace("horrible", "!@#$%");
+    textarea.value = value;
 }
 
 /**
  * return to home page in current tab
  */
-function goHome()
+function goToPage(pageName)
 {
-    window.open("../index.html", "_self");
+    switch(pageName)
+    {
+        default:
+            console.log("ERROR: Invalid argument passed to goToPage()");
+        case "home":
+            if(page != "Manga")
+            {
+                window.open("../index.php", "_self");
+            }
+            break;
+        case "review":
+            window.open("pages/writereview.php", "_self");
+            break;
+    }
 }

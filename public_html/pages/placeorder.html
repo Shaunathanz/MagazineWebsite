@@ -12,50 +12,61 @@
         <h1 id="text">Manga / Place Order</h1>
     </div>
 
-    <!--Delete this and the #nav CSS if not needed-->
-    <div id="nav">
-        <ul>
-            <li>Page 1</li>
-            <li>Page 2</li>
-            <li>Page 3</li>
-        </ul>
-    </div>
-
     <div id="content2">
         <form action="processorder.php" method="post">
             <div class="row">
                 <div class="col-25">
-                    <label for="manga-title">Manga: </label>
+                    <label for="name">Full Name: </label>
                 </div>
                 <div class="col-75">
-                    <select id="selected" name="manga" autocomplete="off" oninput = "updatePrevImg();btnEnable();">
-                        <option value="undefined"></option>
-                        <option value="My Hero Academia # 9">My Hero Academia # 9</option>
-                        <option value="Death Note # 1">Death Note # 1</option>
-                        <option value="Fullmetal Alchemist # 1">Fullmetal Alchemist # 1</option>
-                        <option value="Hellsing # 1">Hellsing # 1</option>
-                        <option value="Sgt. Frog # 6">Sgt. Frog # 6</option>
-                        <option value="Attack on Titan # 12">Attack on Titan # 12</option>
-                        <option value="Space Dandy # 1">Space Dandy # 1</option>
-                        <option value="Uzumaki # 1">Uzumaki # 1</option>
-                        <option value="One Punch-Man # 1">One Punch-Man # 1</option>
-                        <option value="Yotsuba&! # 1">Yotsuba&! # 1</option>
-                    </select>
+                    <input type="text" 
+                        id="name" 
+                        name="name"
+                        pattern="[a-zA-Z ]+"
+                        minlength = "5"
+                        maxlength = "50"
+                        title="Required, alphabetical only, min length 5 characters, max length 50 characters" 
+                        autocomplete="off" required
+                        oninput="btnEnable();updateSubscriptionCount();"><br>
                 </div>
             </div>
             <br><br>
             <div class="row">
                 <div class="col-25">
-                    <label for="quantity">Qty: </label>
+                    <label for="qty_magazines"># Magazines: </label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="quantity" name="quantity" maxlength="6" autocomplete="off" oninput = "btnEnable();">
+                    <input type="number" 
+                        id="qty_magazines" 
+                        name="qty_magazines"
+                        pattern="[0-9-]+"
+                        min = "0"
+                        maxlength = "4"
+                        title="Numeric, max length 4" 
+                        autocomplete="off"
+                        value="0"
+                        oninput="btnEnable();updateSubscriptionCount();"><br>
                 </div>
             </div>
             <br><br>
-            <div class="magazine-item">
-                <img id="manga-img" style="max-width:236px;max-height:400px;">
-            </div><br>
+            <div class="row">
+                <div class="col-25">
+                    <label for="qty_subscriptions"># Subscriptions: </label>
+                </div>
+                <div class="col-75">
+                    <input type="number" 
+                        id="qty_subscriptions"
+                        name="qty_subscriptions"
+                        pattern="[0-9-]+"
+                        min = "0"
+                        max = "10"
+                        title="Numeric, max number of subscriptions is 10" 
+                        autocomplete="off"
+                        value="0"
+                        oninput="btnEnable();updateSubscriptionCount();"><br>
+                </div>
+            </div>
+            <br><br>
             <input id="btn_place-order" type="submit" value="Place Order">
         </form>
     </div>
